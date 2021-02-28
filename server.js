@@ -5,6 +5,7 @@ const app = express();
 //Connect Database
 connectDB();
 
+//lets to use data in req
 //Init Middleware
 app.use(express.json({ extended: false }));
 

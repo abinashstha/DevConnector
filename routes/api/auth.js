@@ -9,9 +9,9 @@ const config = require('config');
 //@route   GET api/auth
 //@desc    Test auth
 //@access  PUBLIC
-router.get('/', auth, (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const user = User.findById(req.user.id).select('-password');
+    const user = await User.findById(req.user.id).select('-password');
     res.send(user);
   } catch (err) {
     console.log(err.message);
